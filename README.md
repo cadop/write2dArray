@@ -6,24 +6,27 @@ Pickle in python is useful for saving and loading data as a python list but is a
 
 ## Advantage
 - Faster that pickle for Python 2
-- Loading is faster than pickle in Python 3
+- In most cases is faster than pickle in Python 3
 - Files saved are usable between Python 2 and 3, while pickle is not
 
+### Note
+For the testing below and the default of the script, the data type returned is a list of arrays.  This is because converting from an array to a list during the load operation takes a non trivial amount of time.  It is left as an array so the user can conver themselves, but in many cases where the data is being used or indexed, the array type is fine to use. 
+
 ### Basic Results
-These results are very basic and shouldn't be used as a definite comparison. They are based on a single run and just an illustration.  The pickle version is also only an integer.
+These results are very basic and shouldn't be used as a definite comparison just illustration of expectations with the sample data.
 
 - Python 2
   - Integer
-    - Pickle (Save,Load): 1.76s,3.9s 
-    - Array (Save,Load): 0.94s,0.09s
-  - Double
-    - Pickle (Save,Load): 1.68s,3.5s 
-    - Array (Save,Load): 1.18s,0.14s
+    - Pickle (Save,Load): 1.8s,3.9s 
+    - Array (Save,Load): 1.0s,0.1s
+  - Float
+    - Pickle (Save,Load): 2.5s,3.7s 
+    - Array (Save,Load): 0.8s,0.08s
     
 - Python 3
   - Integer
-    - Pickle (Save,Load): 0.3s,0.78s 
-    - Array (Save,Load): 0.42s,0.11s
-  - Double
-    - Pickle (Save,Load): 0.28s,0.7s 
-    - Array (Save,Load): 0.54s,0.17s
+    - Pickle (Save,Load): 0.2s,0.7s 
+    - Array (Save,Load): 0.4s,0.1s
+  - Float
+    - Pickle (Save,Load): 0.5s,0.4s 
+    - Array (Save,Load): 0.3s,0.09s
