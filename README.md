@@ -11,6 +11,17 @@ Pickle in python is useful for saving and loading data as a python list but is a
 
 ## Usage
 Run the arrayTest.py file in the src folder.
+```python
+import arrayIO.arrayIO as arrayIO
+#if arrayData is a list of arrays use save2dArray
+len_list = arrayIO.save2dArray(arrayData,dtype = dtype,filename = filename)
+
+#if arrayData is a list of lists use save2dList, which is slower
+len_list = arrayIO.save2dList(arrayData,dtype = dtype,filename = filename)
+
+#to load data use load2dArray and pass it the list of subarray lengths
+loadedArray = arrayIO.load2dArray(len_list,dtype = dtype,filename = filename)
+```
 
 ### Note
 For the testing below and the default of the script, the data type returned is a list of arrays.  This is because converting from an array to a list during the load operation takes a non trivial amount of time.  It is left as an array so the user can conver themselves, but in many cases where the data is being used or indexed, the array type is fine to use. 
