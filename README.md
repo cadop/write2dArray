@@ -16,7 +16,7 @@ Run the arrayTest.py file in the src folder.
 For the testing below and the default of the script, the data type returned is a list of arrays.  This is because converting from an array to a list during the load operation takes a non trivial amount of time.  It is left as an array so the user can conver themselves, but in many cases where the data is being used or indexed, the array type is fine to use. 
 
 ### Basic Results
-These results are very basic and shouldn't be used as a definite comparison just illustration of expectations with the sample data.  The comparison is also assuming the data starts as python lists.  These are converted to arrays during saving.
+These results are very basic and shouldn't be used as a definite comparison just illustration of expectations with the sample data.  The comparison is also assuming the data starts as python lists.  These are converted to arrays during saving, starting with a list of arrays is much faster.
 
 - Python 2
   - Integer
