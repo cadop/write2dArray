@@ -5,6 +5,7 @@ A simple python script to write and read arbitrary 2d arrays to a file
 Pickle in python is useful for saving and loading data as a python list but is a little slow for some uses.  Knowing the data type, such as a list of integers, alternative file writing methods that are faster can be used.  While numpy is normally good for this, it is not always available (i.e., using an API or IronPython as was my case).  This led me to the python modules Struct and Array.  Based on some reading and StackOverflow, it seems Array is the way to go in my case.  The only problem with the default behaviour and the posts I could find is in the lack of a 2D array version, so I made this script for myself, hopefully helping someone else with the same issue. 
 
 ## Advantage
+- Works in IronPython
 - Faster that pickle for Python 2
 - In most cases is faster than pickle in Python 3
 - Files saved are usable between Python 2 and 3, while pickle is not
